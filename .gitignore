@@ -1,16 +1,16 @@
-/findWrongReview/review train huge/
+/findWrongReivewBySentimentAnalysis/review train huge/
 /crawling/errlog.txt
 /crawling/correct.txt
-/findWrongReview/best_model_short.h5
-/findWrongReview/reviewTrain/
+/findWrongReivewBySentimentAnalysis/best_model_short.h5
+/findWrongReivewBySentimentAnalysis/reviewTrain/
 /crawling/hanspell/
-/findWrongReview/best_model.h5
-/findWrongReview/last_Test_data.txt
-/findWrongReview/reviewTest.txt
-/findWrongReview/reviewTrain.txt
-/findWrongReview/reviewTrain135.txt
-/findWrongReview/tokenizer2.pickle
-/findWrongReview/tokenizer.pickle
+/findWrongReivewBySentimentAnalysis/best_model.h5
+/findWrongReivewBySentimentAnalysis/last_Test_data.txt
+/findWrongReivewBySentimentAnalysis/reviewTest.txt
+/findWrongReivewBySentimentAnalysis/reviewTrain.txt
+/findWrongReivewBySentimentAnalysis/reviewTrain135.txt
+/findWrongReivewBySentimentAnalysis/tokenizer2.pickle
+/findWrongReivewBySentimentAnalysis/tokenizer.pickle
 /venvs/
 *.xml
 .idea/findWrongReview.iml

@@ -1,3 +1,9 @@
+"""
+model 생성 후 test 문장을 제공하여, 긍정,부정을 잘 판단하는지 보기위한 코드.
+
+
+
+"""
 import pickle
 import re
 from konlpy.tag import Okt

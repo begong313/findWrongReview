@@ -1,3 +1,7 @@
+"""
+생성된 모델로 기존의 리뷰를 재검사하는 코드.
+"""
+
 import pickle
 import re
 from konlpy.tag import Okt
