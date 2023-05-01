@@ -1,0 +1,16 @@
+/findWrongReview/review train huge/
+/crawling/errlog.txt
+/crawling/correct.txt
+/findWrongReview/best_model_short.h5
+/findWrongReview/reviewTrain/
+/crawling/hanspell/
+/findWrongReview/best_model.h5
+/findWrongReview/last_Test_data.txt
+/findWrongReview/reviewTest.txt
+/findWrongReview/reviewTrain.txt
+/findWrongReview/reviewTrain135.txt
+/findWrongReview/tokenizer2.pickle
+/findWrongReview/tokenizer.pickle
+/venvs/
+*.xml
+.idea/findWrongReview.iml
