@@ -1,9 +1,13 @@
 """
 생성된 모델로 기존의 리뷰를 재검사하는 코드.
+램 누수 발생해서 계속 꺼진다.
+어디서 발생하는지 잘 모르겠음
 """
-
+import traceback
 import pickle
 import re
+
+import pymysql
 from konlpy.tag import Okt
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
@@ -16,11 +20,11 @@ X_test = []
 with open('tokenizer2.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
-#test 리뷰 불러오기
-
-f=open("last_Test_data.txt",'r',encoding="utf8")
-txt=f.readlines()
-f.close()
+#db불러오기
+dbcon=pymysql.connect(host='localhost', user='root',password='!shwhdqls12',db='yogiyocomment', charset='utf8')
+cur = dbcon.cursor()
+loadingQuery = "select comment from yogiyocomment.reviewdatanew where num=%s and (isnull(PosOrNe))"
+updateQuery = "UPDATE yogiyocomment.reviewdatanew set PosOrNe=%s where num=%s"
 
 loaded_model = load_model('best_model.h5')
 
@@ -30,22 +34,36 @@ def sentiment_predict(new_sentence):
   new_sentence = [word for word in new_sentence if not word in stopwords] # 불용어 제거
   encoded = tokenizer.texts_to_sequences([new_sentence]) # 정수 인코딩
   pad_new = pad_sequences(encoded, maxlen = 30) # 패딩
-  score = float(loaded_model.predict(pad_new)) # 예측
+
+
+  try:
+    score = float(loaded_model.predict(pad_new)) # 예측
+  except:
+      return 2
   if(score > 0.5):
     return True
   else:
     return False
 
 
-postive = 0
-negative =0
-for i in txt:
+i=1
+while i<4047405:
     try:
-        if sentiment_predict(i):
-            postive+=1
-        else :
-            negative+=1
-    except:
-        pass
-    print("positive count : ", postive)
-    print("negative count : ", negative)
+        cur.execute(loadingQuery,i)
+        rs = cur.fetchone()
+        if rs == None:
+            i += 1
+            continue
+        print(rs)
+        #맞춤법 검사가 완료된 comment 다시 탑제
+        cur.execute(updateQuery,(sentiment_predict(rs[0]),i))
+
+
+        dbcon.commit()
+        print(i)
+        i += 1
+
+
+    except :
+        traceback.print_exc()
+        i+=1
