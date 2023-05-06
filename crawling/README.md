@@ -1,6 +1,6 @@
 # 요기요 api url을 활용한 식당 review crawling
 
-### contributor : 20180891 노종빈(begong313)
+
 
 ----------
 ### 특징
@@ -10,7 +10,11 @@
 
 -------
 ## crawlingReview.py
-
+### contributor 
+| 이름  | 학번       | gitHub    |
+|-----|----------|-----------|
+| 노종빈 | 20180891 | begong313 |
+<br>
 요기요 리뷰 api url이 식당코드와, pageNum을 인자로 받아 데이터를 전송해줌.
 반복문을 활용하여 데이터 수집.
 별점과 같은 데이터를 함께 사용하기 위해 sql을 사용하였음.
@@ -22,6 +26,11 @@
 혹시모를 서버 과부화 방지위해 sleep 적용
 
 ## correctorSQL.py
+### contributor 
+| 이름  | 학번       | gitHub    |
+|-----|----------|-----------|
+| 노종빈 | 20180891 | begong313 |
+<br>
 
 #### hanspell 라이브러리 사용 
 
