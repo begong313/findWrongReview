@@ -3,6 +3,14 @@
 요기요 리뷰는 json의 형태로 넘어오며, comment,별점등의 정보 이외에도 많은 정보가 있음.
 현재의 코드는 데이터 중, 각종별점과 comment만 추출함
 
+현재 sql
+num (int) : index
+comment (text ) : 리뷰 내용
+quantity (tinyInt) : 양 관련 별점 (본 연구에서는 사용 x)
+delivery (tinyint) : 배달 관련 별점 (본 연구에서는 사용 x)
+totalRating (tinyint) : 총 별점
+PosOrNe (tinyint) : 재 검사한 긍정 부정 여부 (1 : 긍정, 0 : 부정 , 2:판단불가)
+
 """
 
 
