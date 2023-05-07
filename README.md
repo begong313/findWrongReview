@@ -33,4 +33,15 @@ https://wikidocs.net/44249 의 코드를 활용하여 감정분석 모델 생성
 
 <br>
 
+<Br>
+
+## findWrodReviewByTFIDF
+### contributor
+| 이름  | 학번       | gitHub    |
+|-----|----------|-----------|
+| 김민제 | 20191557 | kevinmj12 |
+
+<Br>
+TF-IDF를 통한 키워드 추출 및 활용을 통한 모순된 리뷰 검사
+
 
